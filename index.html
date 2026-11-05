@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker Dashboard</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Expense Tracker</h1>
+
+        <!-- Dark Mode -->
+        <button id="darkMode">🌙 Dark Mode</button>
+
+        <!-- Balance -->
+        <h2>
+            Balance: ₹<span id="balance">0</span>
+        </h2>
+
+        <!-- Transaction Count -->
+        <h3>
+            Total Transactions:
+            <span id="count">0</span>
+        </h3>
+
+        <!-- Income / Expense -->
+        <div class="summary">
+
+            <div>
+                <h3>Income</h3>
+                <p id="income">₹0</p>
+            </div>
+
+            <div>
+                <h3>Expense</h3>
+                <p id="expense">₹0</p>
+            </div>
+
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats">
+
+            <div>
+                <h3>Highest Income</h3>
+                <p id="highestIncome">₹0</p>
+            </div>
+
+            <div>
+                <h3>Highest Expense</h3>
+                <p id="highestExpense">₹0</p>
+            </div>
+
+        </div>
+
+        <!-- Search -->
+        <input
+            type="text"
+            id="search"
+            placeholder="Search Transactions">
+
+        <!-- PDF Button -->
+        <button id="downloadPDF">
+            Download PDF
+        </button>
+
+        <!-- Add Transaction -->
+        <h3>Add Transaction</h3>
+
+        <input
+            type="text"
+            id="description"
+            placeholder="Enter Description">
+
+        <input
+            type="number"
+            id="amount"
+            placeholder="Enter Amount">
+
+        <input
+            type="date"
+            id="date">
+
+        <select id="category">
+            <option value="Salary">Salary</option>
+            <option value="Food">Food</option>
+            <option value="Shopping">Shopping</option>
+            <option value="Travel">Travel</option>
+            <option value="Bills">Bills</option>
+            <option value="Entertainment">Entertainment</option>
+        </select>
+
+        <button id="addBtn">
+            Add Transaction
+        </button>
+
+        <button id="clearAll">
+            Clear All Transactions
+        </button>
+
+        <!-- Expense Category Chart -->
+        <h3>Expense Categories Chart</h3>
+
+        <canvas id="pieChart"></canvas>
+
+        <!-- Income vs Expense Chart -->
+        <h3>Income vs Expense Chart</h3>
+
+        <canvas id="incomeExpenseChart"></canvas>
+
+        <!-- Transaction List -->
+        <h3>Transactions</h3>
+
+        <ul id="transactionList"></ul>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
